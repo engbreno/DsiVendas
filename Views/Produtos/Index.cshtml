@@ -1,0 +1,35 @@
+@model IEnumerable<DsiVendas.Models.Produto>
+
+<h1>Lista de Produtos</h1>
+
+<p>
+  <a asp-action="Criar">Criar Novo Produto</a>
+</p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Preço</th>
+      <th scope="col">Fornecedor</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var produto in Model)
+    {
+      <tr>
+        <td scope="row">@produto.Id</td>
+        <td>@produto.Nome</td>
+        <td>@produto.Preco.ToString("C")</td>
+        <td>@produto.Fornecedor.Nome - @produto.Fornecedor.Telefone</td>
+        <td>
+          <a asp-action="Editar" asp-route-id="@produto.Id">Editar</a> |
+          <a asp-action="Detalhes" asp-route-id="@produto.Id">Detalhes</a> |
+          <a asp-action="Remover" asp-route-id="@produto.Id">Excluir</a>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
