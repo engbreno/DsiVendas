@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HbwjuKcSnBTx5ybi7hmOLjhcsX/izFu9Kk92+36dh61tNNW40Aqr+LnyrjXuB2fBQmjpMJ3RDnDn3BPt/B/lsg==",
+  "dgSpecHash": "GJSkjuh8FCchHS95S1GMCqBUKq/dfcF7VTOcgwsA8J8+WkQavdZPQdyIMeNHvzF/BPTZOXwjSIrHZJXONjjxkw==",
   "success": true,
-  "projectFilePath": "/Users/breno/Aulas/DSI/DsiVendas/DsiVendas.csproj",
+  "projectFilePath": "/Users/breno/GitHub/DsiVendas/DsiVendas.csproj",
   "expectedPackageFiles": [
     "/Users/breno/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/breno/.nuget/packages/microsoft.bcl.asyncinterfaces/6.0.0/microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",

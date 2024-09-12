@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/breno/Aulas/DSI/DsiVendas/DsiVendas.csproj": {}
+    "/Users/breno/GitHub/DsiVendas/DsiVendas.csproj": {}
   },
   "projects": {
-    "/Users/breno/Aulas/DSI/DsiVendas/DsiVendas.csproj": {
+    "/Users/breno/GitHub/DsiVendas/DsiVendas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/breno/Aulas/DSI/DsiVendas/DsiVendas.csproj",
+        "projectUniqueName": "/Users/breno/GitHub/DsiVendas/DsiVendas.csproj",
         "projectName": "DsiVendas",
-        "projectPath": "/Users/breno/Aulas/DSI/DsiVendas/DsiVendas.csproj",
+        "projectPath": "/Users/breno/GitHub/DsiVendas/DsiVendas.csproj",
         "packagesPath": "/Users/breno/.nuget/packages/",
-        "outputPath": "/Users/breno/Aulas/DSI/DsiVendas/obj/",
+        "outputPath": "/Users/breno/GitHub/DsiVendas/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/breno/.nuget/NuGet/NuGet.Config"
