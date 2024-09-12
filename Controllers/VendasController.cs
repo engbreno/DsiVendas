@@ -7,36 +7,43 @@ namespace DsiVendas.Controllers
     public class VendasController(ApplicationDbContext context) : Controller
     {
         // GET: Criação de Venda
-        public IActionResult Create()
+        public IActionResult Criar()
         {
-            ViewBag.Clientes = new SelectList(context.Clientes, "IdCliente", "Nome");
-            ViewBag.Produtos = new SelectList(context.Produtos, "IdProduto", "Nome");
+            ViewBag.Clientes = new SelectList(context.Clientes, "Id", "Nome");
+            ViewBag.Produtos = new SelectList(context.Produtos, "Id", "Nome");
             return View();
+        }
+
+        [HttpGet]
+        public JsonResult GetPrecoProduto(int idProduto)
+        {
+            var produto = context.Produtos.FirstOrDefault(p => p.Id == idProduto);
+            if (produto != null)
+            {
+                return Json(produto.Preco);
+            }
+            return Json(0);
         }
 
         // POST: Salvar a Venda e seus itens
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Venda venda, List<ItemVenda> itensVenda)
+        public async Task<IActionResult> Criar(Venda venda, List<ItemVenda> itensVenda)
         {
-            if (ModelState.IsValid)
+            context.Add(venda);
+            await context.SaveChangesAsync();
+            foreach (var item in itensVenda)
             {
-                context.Add(venda);
-                await context.SaveChangesAsync();
-
-                foreach (var item in itensVenda)
-                {
-                    item.IdVenda = venda.Id;
-                    item.PrecoUnitario = context.Produtos.Find(item.IdProduto).Preco;
-                    context.ItemsVenda.Add(item);
-                }
-
-                await context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                item.VendaId = venda.Id;
+                item.PrecoUnitario = context.Produtos.Find(item.ProdutoId).Preco;
+                context.ItemsVenda.Add(item);
             }
+            await context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
 
-            ViewBag.Clientes = new SelectList(context.Clientes, "IdCliente", "Nome", venda.IdCliente);
-            ViewBag.Produtos = new SelectList(context.Produtos, "IdProduto", "Nome");
+
+            ViewBag.Clientes = new SelectList(context.Clientes, "Id", "Nome", venda.Id);
+            ViewBag.Produtos = new SelectList(context.Produtos, "Id", "Nome");
             return View(venda);
         }
     }
