@@ -19,7 +19,8 @@
 
   <div class="form-group">
     <label for="FormaPagamento">Forma de Pagamento</label>
-    <input asp-for="FormaPagamento" class="form-control" />
+    <select asp-for="FormaPagamento" asp-items="ViewBag.FormaPagamentos" class="form-control"></select>
+
   </div>
 
   <h4>Itens da Venda</h4>
@@ -57,7 +58,7 @@
                     <select name="itensVenda[${itemIndex}].ProdutoId" class="form-control" onchange="buscarPreco(${itemIndex})">
   @foreach (var produto in ViewBag.Produtos)
   {
-                                                    <option value="@produto.Value">@produto.Text</option>
+                                                          <option value="@produto.Value">@produto.Text</option>
   }
                     </select>
                 </td>

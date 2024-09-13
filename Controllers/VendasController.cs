@@ -9,8 +9,14 @@ namespace DsiVendas.Controllers
         // GET: Criação de Venda
         public IActionResult Criar()
         {
+            var ListaFormaPagamento = new List<string>();
+            ListaFormaPagamento.Add("Cartão de Débito");
+            ListaFormaPagamento.Add("Cartão de Crédito");
+            ListaFormaPagamento.Add("Boleto");
+            ListaFormaPagamento.Add("PIX");
             ViewBag.Clientes = new SelectList(context.Clientes, "Id", "Nome");
             ViewBag.Produtos = new SelectList(context.Produtos, "Id", "Nome");
+            ViewBag.FormaPagamentos = new SelectList(ListaFormaPagamento);
             return View();
         }
 
