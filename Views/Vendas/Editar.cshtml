@@ -1,0 +1,144 @@
+@model Venda
+
+@{
+ViewBag.Title = "Editar Venda";
+var itensVenda = Model.ItensVenda.ToList(); // Converte a coleção para uma lista
+}
+
+<h2>Editar Venda</h2>
+
+<form asp-action="Editar" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label for="ClienteId">Cliente</label>
+        <select asp-for="ClienteId" asp-items="ViewBag.Clientes" class="form-control"></select>
+    </div>
+
+    <div class="form-group">
+        <label for="DataVenda">Data da Venda</label>
+        <input asp-for="DataVenda" class="form-control" type="date" id="dataVenda" />
+    </div>
+
+    <div class="form-group">
+        <label for="FormaPagamento">Forma de Pagamento</label>
+        <select asp-for="FormaPagamento" asp-items="ViewBag.FormaPagamentos" class="form-control"></select>
+    </div>
+
+    <h4>Itens da Venda</h4>
+    <table class="table" id="itensVendaTable">
+        <thead>
+        <tr>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Preço Unitário</th>
+            <th>SubTotal</th>
+            <th></th> <!-- Coluna para botão de remover item -->
+        </tr>
+        </thead>
+        <tbody id="itensVenda">
+        @for (int i = 0; i < itensVenda.Count; i++)
+        {
+        <tr>
+            <td>
+                <select name="itensVenda[@i].ProdutoId" class="form-control" onchange="buscarPreco(@i)">
+                    @foreach (var produto in (IEnumerable<SelectListItem>)ViewBag.Produtos)
+                    {
+                    var selected = produto.Value == itensVenda[i].ProdutoId.ToString() ? "selected=\"selected\"" : "";
+                    @: <option value="@produto.Value" @Html.Raw(selected)>@produto.Text</option>
+                    }
+                </select>
+            </td>
+            <td><input type="number" name="itensVenda[@i].Quantidade" class="form-control" value="@itensVenda[i].Quantidade" onchange="calcularSubTotal(@i)" /></td>
+            <td><input type="number" name="itensVenda[@i].PrecoUnitario" class="form-control" value="@itensVenda[i].PrecoUnitario" readonly /></td>
+            <td><input type="number" name="itensVenda[@i].SubTotal" class="form-control" value="@itensVenda[i].SubTotal" readonly /></td>
+            <td><button type="button" class="btn btn-danger" onclick="removerItem(this)">Remover</button></td>
+        </tr>
+        }
+        </tbody>
+    </table>
+
+    <button type="button" class="btn btn-success" id="adicionarItem">Adicionar Item</button>
+    <br />
+    <br />
+
+    <div class="form-group" style="text-align: right;">
+        <label for="totalVenda">Total da Venda:</label>
+        <input type="text" id="totalVenda" class="form-control" readonly style="width: 100px; display: inline-block;" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
+
+<script>
+    let itemIndex = @itensVenda.Count;
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // Atualizar os campos de subtotal e total de cada item ao carregar a página
+        
+        for (let i = 0; i < itemIndex; i++) {
+            let quantidade = parseFloat(document.querySelector(`input[name="itensVenda[${i}].Quantidade"]`).value) || 0;
+            buscarPreco(i, true);
+            let precoUnitario = parseFloat(document.querySelector(`input[name="itensVenda[${i}].PrecoUnitario"]`).value) || 0;
+            let subtotal = quantidade * precoUnitario;
+            document.querySelector(`input[name="itensVenda[${i}].SubTotal"]`).value = subtotal.toFixed(2);
+        }
+        atualizarTotalVenda(); // Atualiza o total geral da venda
+    });
+
+    document.getElementById("adicionarItem").addEventListener("click", function () {
+        let novaLinha = `
+            <tr>
+                <td>
+                    <select name="itensVenda[${itemIndex}].ProdutoId" class="form-control" onchange="buscarPreco(${itemIndex})">
+                        @foreach (var produto in (IEnumerable<SelectListItem>)ViewBag.Produtos)
+        {
+        <option value="@produto.Value">@produto.Text</option>
+        }
+                    </select>
+                </td>
+                <td><input type="number" name="itensVenda[${itemIndex}].Quantidade" class="form-control" onchange="calcularSubTotal(${itemIndex})" /></td>
+                <td><input type="number" name="itensVenda[${itemIndex}].PrecoUnitario" class="form-control" readonly /></td>
+                <td><input type="number" name="itensVenda[${itemIndex}].SubTotal" class="form-control" readonly /></td>
+                <td><button type="button" class="btn btn-danger" onclick="removerItem(this)">Remover</button></td>
+            </tr>`;
+        document.getElementById("itensVenda").insertAdjacentHTML('beforeend', novaLinha);
+        buscarPreco(itemIndex);
+        itemIndex++;
+        atualizarTotalVenda();
+    });
+
+    // Funções para buscar o preço, calcular subtotal, remover item e atualizar total da venda
+    function removerItem(botao) {
+        botao.closest('tr').remove();
+        atualizarTotalVenda();
+    }
+
+    function calcularSubTotal(index) {
+        let quantidade = parseFloat(document.querySelector(`input[name="itensVenda[${index}].Quantidade"]`).value) || 0;
+        let precoUnitario = parseFloat(document.querySelector(`input[name="itensVenda[${index}].PrecoUnitario"]`).value) || 0;
+        let subtotal = quantidade * precoUnitario;
+        document.querySelector(`input[name="itensVenda[${index}].SubTotal"]`).value = subtotal.toFixed(2);
+        atualizarTotalVenda();
+    }
+
+    function buscarPreco(index) {
+        let produtoId = document.querySelector(`select[name="itensVenda[${index}].ProdutoId"]`).value;
+
+        fetch(`/Vendas/GetPrecoProduto?idProduto=${produtoId}`)
+            .then(response => response.json())
+            .then(data => {
+                document.querySelector(`input[name="itensVenda[${index}].PrecoUnitario"]`).value = data;
+                calcularSubTotal(index);
+            })
+            .catch(error => console.error('Erro ao buscar o preço do produto:', error));
+    }
+
+    function atualizarTotalVenda() {
+        let total = 0;
+        document.querySelectorAll('input[name^="itensVenda"][name$=".SubTotal"]').forEach(function (input) {
+            total += parseFloat(input.value) || 0;
+        });
+        document.getElementById("totalVenda").value = total.toFixed(2);
+    }
+</script>

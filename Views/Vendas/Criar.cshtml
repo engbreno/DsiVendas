@@ -1,7 +1,7 @@
 @model Venda
 
 @{
-  ViewBag.Title = "Criar Venda";
+ViewBag.Title = "Criar Venda";
 }
 
 <h2>Criar Venda</h2>
@@ -14,28 +14,27 @@
 
   <div class="form-group">
     <label for="DataVenda">Data da Venda</label>
-    <input asp-for="DataVenda" class="form-control" type="date" />
+    <input asp-for="DataVenda" class="form-control" type="date" id="dataVenda" />
   </div>
 
   <div class="form-group">
     <label for="FormaPagamento">Forma de Pagamento</label>
     <select asp-for="FormaPagamento" asp-items="ViewBag.FormaPagamentos" class="form-control"></select>
-
   </div>
 
   <h4>Itens da Venda</h4>
   <table class="table" id="itensVendaTable">
     <thead>
-      <tr>
-        <th>Produto</th>
-        <th>Quantidade</th>
-        <th>Preço Unitário</th>
-        <th>SubTotal</th>
-        <th></th> <!-- Coluna para botão de remover item -->
-      </tr>
+    <tr>
+      <th>Produto</th>
+      <th>Quantidade</th>
+      <th>Preço Unitário</th>
+      <th>SubTotal</th>
+      <th></th> <!-- Coluna para botão de remover item -->
+    </tr>
     </thead>
     <tbody id="itensVenda">
-      <!-- Linhas dinâmicas serão inseridas aqui -->
+    <!-- Linhas dinâmicas serão inseridas aqui -->
     </tbody>
   </table>
 
@@ -43,10 +42,21 @@
   <br />
   <br />
 
+  <!-- Campo para exibir o total da venda -->
+  <div class="form-group" style="text-align: right;">
+    <label for="totalVenda">Total da Venda:</label>
+    <input type="text" id="totalVenda" class="form-control" readonly style="width: 100px; display: inline-block;" />
+  </div>
+
   <button type="submit" class="btn btn-primary">Salvar</button>
 </form>
 
 <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let hoje = new Date().toISOString().split('T')[0];
+    document.getElementById("dataVenda").value = hoje;
+  });
+  
   let itemIndex = 0;
 
   // Evento para adicionar um novo item
@@ -56,10 +66,10 @@
             <tr>
                 <td>
                     <select name="itensVenda[${itemIndex}].ProdutoId" class="form-control" onchange="buscarPreco(${itemIndex})">
-  @foreach (var produto in ViewBag.Produtos)
-  {
-                                                          <option value="@produto.Value">@produto.Text</option>
-  }
+                        @foreach (var produto in ViewBag.Produtos)
+    {
+    <option value="@produto.Value">@produto.Text</option>
+    }
                     </select>
                 </td>
                 <td><input type="number" name="itensVenda[${itemIndex}].Quantidade" class="form-control" onchange="calcularSubTotal(${itemIndex})" /></td>
@@ -68,12 +78,15 @@
                 <td><button type="button" class="btn btn-danger" onclick="removerItem(this)">Remover</button></td>
             </tr>`;
     document.getElementById("itensVenda").insertAdjacentHTML('beforeend', novaLinha);
+    buscarPreco(itemIndex);
     itemIndex++;
+    atualizarTotalVenda(); // Atualiza o total da venda ao adicionar um novo item
   });
 
   // Função para remover a linha
   function removerItem(botao) {
     botao.closest('tr').remove();
+    atualizarTotalVenda(); // Atualiza o total da venda ao remover um item
   }
 
   // Função para calcular o subtotal
@@ -82,6 +95,7 @@
     let precoUnitario = document.querySelector(`input[name="itensVenda[${index}].PrecoUnitario"]`).value;
     let subtotal = quantidade * precoUnitario;
     document.querySelector(`input[name="itensVenda[${index}].SubTotal"]`).value = subtotal.toFixed(2);
+    atualizarTotalVenda(); // Atualiza o total da venda ao calcular o subtotal
   }
 
   // Função AJAX para buscar o preço do produto selecionado
@@ -90,11 +104,20 @@
 
     // Chama a action GetPrecoProduto para buscar o preço
     fetch(`/Vendas/GetPrecoProduto?idProduto=${produtoId}`)
-      .then(response => response.json())
-      .then(data => {
-        document.querySelector(`input[name="itensVenda[${index}].PrecoUnitario"]`).value = data;
-        calcularSubTotal(index);  // Atualiza o subtotal quando o preço é carregado
-      })
-      .catch(error => console.error('Erro ao buscar o preço do produto:', error));
+            .then(response => response.json())
+            .then(data => {
+              document.querySelector(`input[name="itensVenda[${index}].PrecoUnitario"]`).value = data;
+              calcularSubTotal(index);  // Atualiza o subtotal quando o preço é carregado
+            })
+            .catch(error => console.error('Erro ao buscar o preço do produto:', error));
+  }
+
+  // Função para atualizar o total da venda
+  function atualizarTotalVenda() {
+    let total = 0;
+    document.querySelectorAll('input[name^="itensVenda"][name$=".SubTotal"]').forEach(function (input) {
+      total += parseFloat(input.value) || 0;
+    });
+    document.getElementById("totalVenda").value = total.toFixed(2);
   }
 </script>
