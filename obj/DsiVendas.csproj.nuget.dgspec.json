@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GitHub\\DsiVendas\\DsiVendas.csproj": {}
+    "C:\\Users\\henry\\source\\repos\\DsiVendas\\DsiVendas.csproj": {}
   },
   "projects": {
-    "C:\\GitHub\\DsiVendas\\DsiVendas.csproj": {
+    "C:\\Users\\henry\\source\\repos\\DsiVendas\\DsiVendas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GitHub\\DsiVendas\\DsiVendas.csproj",
+        "projectUniqueName": "C:\\Users\\henry\\source\\repos\\DsiVendas\\DsiVendas.csproj",
         "projectName": "DsiVendas",
-        "projectPath": "C:\\GitHub\\DsiVendas\\DsiVendas.csproj",
-        "packagesPath": "C:\\Users\\breno\\.nuget\\packages\\",
-        "outputPath": "C:\\GitHub\\DsiVendas\\obj\\",
+        "projectPath": "C:\\Users\\henry\\source\\repos\\DsiVendas\\DsiVendas.csproj",
+        "packagesPath": "C:\\Users\\henry\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\henry\\source\\repos\\DsiVendas\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\breno\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\henry\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -50,6 +46,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -65,6 +65,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.8, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "Sqlite": {
               "target": "Package",
@@ -90,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

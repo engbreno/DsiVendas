@@ -30,6 +30,14 @@ public class ClientesController(ApplicationDbContext context) : Controller
     
     return RedirectToAction("Index");
   }
+      [HttpPost]
+  public IActionResult CriarApi([FromBody]Cliente cliente)
+  {
+    context.Clientes.Add(cliente);
+    context.SaveChanges();  
+    
+    return Ok();
+  }
 
   public IActionResult Editar(int id)
   {
