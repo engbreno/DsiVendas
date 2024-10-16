@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MjSzsOiuBW8=",
+  "dgSpecHash": "javceRii93g=",
   "success": true,
-  "projectFilePath": "C:\\GitHub\\DsiVendas\\DsiVendas.csproj",
+  "projectFilePath": "C:\\Mac\\Home\\Downloads\\DsiVendas-main\\DsiVendas.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\breno\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\breno\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",

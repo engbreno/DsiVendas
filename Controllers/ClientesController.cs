@@ -31,6 +31,15 @@ public class ClientesController(ApplicationDbContext context) : Controller
     return RedirectToAction("Index");
   }
 
+  [HttpPost]
+  public IActionResult CriarApi([FromBody] Cliente cliente)
+  {
+    var clientedb = context.Clientes.Add(cliente);
+    context.SaveChanges();  
+
+    return CreatedAtAction(nameof(CriarApi), new { id = clientedb.Entity.Id }, clientedb.Entity);
+  }
+
   public IActionResult Editar(int id)
   {
     var cliente = context.Clientes.Find(id);
