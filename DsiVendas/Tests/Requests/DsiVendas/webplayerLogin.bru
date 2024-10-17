@@ -1,0 +1,23 @@
+meta {
+  name: webplayerLogin
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:3000/login
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username": "usuario",
+    "password": "senha123"
+  }
+}
+
+body:multipart-form {
+  username: usuario
+  password: senha123
+}

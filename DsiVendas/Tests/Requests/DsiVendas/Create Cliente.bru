@@ -1,0 +1,21 @@
+meta {
+  name: Create Cliente
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:5299/Api/Create
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "nome": "João Silva",
+    "email": "joao.silva@example.com",
+    "endereco": "Rua das Flores, 123",
+    "telefone": "(11) 98765-4321"
+  }
+  
+}

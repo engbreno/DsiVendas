@@ -1,0 +1,27 @@
+﻿<Window x:Class="WpfVendas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfVendas"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" Height="54" VerticalAlignment="Top" Width="800" Orientation="Horizontal" Background="#FF6490FD">
+            <Button Content="Clientes" Click="btnClientes_Click" Width="80" Height="48" RenderTransformOrigin="1.573,0.678" Margin="5,0,0,0"/>
+            <Button Content="Fornecedores" Width="80" Height="48" Margin="5,0,0,0"/>
+            <Button Content="Produtos" Width="80" Height="48" Margin="5,0,0,0"/>
+            <Button Content="Vendas" Width="80" Height="48" Margin="5,0,0,0"/>
+            <Button Content="Sair" Width="80" Height="48" Margin="5,0,0,0"/>
+        </StackPanel>
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Content="Frame" Margin="0,59,0,0">
+            <Frame.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFD1ECF2"/>
+                    <GradientStop Color="#FF2D7EF4" Offset="1"/>
+                </LinearGradientBrush>
+            </Frame.Background>
+        </Frame>
+
+    </Grid>
+</Window>
