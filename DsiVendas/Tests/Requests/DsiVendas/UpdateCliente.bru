@@ -1,0 +1,22 @@
+meta {
+  name: UpdateCliente
+  type: http
+  seq: 5
+}
+
+put {
+  url: http://localhost:5299/Api/UpdateCliente
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "id": 2,
+      "nome": "Rafaela Marques",
+      "email": "engbrenooliveira@gmail.com",
+      "endereco": "Santo Mamprim",
+      "telefone": "343354"
+  }
+  
+}

@@ -5,13 +5,14 @@ meta {
 }
 
 post {
-  url: http://localhost:5299/Api/Create
+  url: http://localhost:5299/Api/CreateCliente
   body: json
   auth: none
 }
 
 body:json {
   {
+    "id": 15,
     "nome": "João Silva",
     "email": "joao.silva@example.com",
     "endereco": "Rua das Flores, 123",

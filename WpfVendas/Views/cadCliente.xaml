@@ -1,0 +1,48 @@
+﻿<Window x:Class="WpfVendas.Views.cadCliente"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfVendas.Views"
+        mc:Ignorable="d"
+        Title="cadCliente" Height="234" Width="400
+">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="64"/>
+            <ColumnDefinition Width="300" />
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Nome:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" />
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Cliente.Nome, UpdateSourceTrigger=PropertyChanged}" 
+                 Margin="0,5" Width="250" Height="25" HorizontalAlignment="Left"/>
+
+        <!-- Label e TextBox para Email -->
+        <Label Content="Email:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" />
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Cliente.Email, UpdateSourceTrigger=PropertyChanged}" 
+                 Margin="0,5" Width="250" Height="25" HorizontalAlignment="Left"/>
+
+        <!-- Label e TextBox para Endereço -->
+        <Label Content="Endereço:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" />
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Cliente.Endereco, UpdateSourceTrigger=PropertyChanged}" 
+                 Margin="0,5" Width="250" Height="25" HorizontalAlignment="Left"/>
+
+        <!-- Label e TextBox para Telefone -->
+        <Label Content="Telefone:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" />
+        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Cliente.Telefone, UpdateSourceTrigger=PropertyChanged}" 
+                 Margin="0,5" Width="250" Height="25" HorizontalAlignment="Left"/>
+
+        <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="0,10,0,10" Width="220">
+            <Button Content="Salvar" Width="100" Margin="5" Command="{Binding SalvarCommand}"/>
+            <Button Content="Cancelar" Width="100" Margin="5" Command="{Binding CancelarCommand}"/>
+        </StackPanel>
+    </Grid>
+</Window>

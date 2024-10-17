@@ -22,14 +22,14 @@ namespace WpfVendas.ViewModels
         {
             _httpClient = new HttpClient();
             Clientes = new ObservableCollection<Cliente>();
-            CarregarClientesDaAPI();
+            //CarregarClientesDaAPI();
         }
 
-        private async Task CarregarClientesDaAPI()
+        public async Task CarregarClientesDaAPI()
         {
             try
             {
-                var apiUrl = "https://sua-api-endereco/api/clientes";
+                var apiUrl = "http://localhost:5299/Api/GetClientes";
                 var clientesDaApi = await _httpClient.GetFromJsonAsync<Cliente[]>(apiUrl);
 
                 if (clientesDaApi != null)

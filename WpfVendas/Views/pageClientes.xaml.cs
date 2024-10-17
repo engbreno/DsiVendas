@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DsiVendas.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfVendas.ViewModels;
+using WpfVendas.Views;
 
 namespace WpfVendas.Pages
 {
@@ -21,10 +23,43 @@ namespace WpfVendas.Pages
     /// </summary>
     public partial class pageClientes : Page
     {
+        private ClienteViewModel _viewModel;
+
         public pageClientes()
         {
             InitializeComponent();
-            DataContext = new ClienteViewModel();
+            _viewModel = new ClienteViewModel();
+            DataContext = _viewModel;
+        }
+
+        private async void btnAtualizar_Click(object sender, RoutedEventArgs e)
+        {
+            _viewModel.Clientes.Clear();
+            await _viewModel.CarregarClientesDaAPI();
+        }
+
+        private void btnAddCliente_Click(object sender, RoutedEventArgs e)
+        {
+          
+        }
+
+        private void ClientesDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            // Verifica se algum cliente está selecionado
+            if (ClientesDataGrid.SelectedItem is Cliente clienteSelecionado)
+            {
+                // Cria o ViewModel para a janela de edição, passando o cliente selecionado
+                var viewModel = new ClienteCadastroViewModel(null, clienteSelecionado);
+
+                // Cria a janela de edição
+                var janelaCadastro = new cadCliente
+                {
+                    DataContext = viewModel,
+                    Owner = Window.GetWindow(this)  // Define o dono como a janela principal (MainWindow)
+                };
+
+                janelaCadastro.ShowDialog();  // Mostra a janela de edição modal (abre por cima da MainWindow)
+            }
         }
     }
 }
