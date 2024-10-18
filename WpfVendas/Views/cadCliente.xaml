@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfVendas.Views"
         mc:Ignorable="d"
-        Title="cadCliente" Height="234" Width="400
+        Title="cadCliente" Height="258" Width="400
 ">
     <Grid Margin="20">
         <Grid.RowDefinitions>

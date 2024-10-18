@@ -32,6 +32,7 @@ namespace WpfVendas.ViewModels
         public ClienteCadastroViewModel(Action fecharAction, Cliente cliente = null)
         {
             _fecharAction = fecharAction;
+            _httpClient = _httpClient ?? new HttpClient();
             Cliente = cliente ?? new Cliente(); // Se o cliente for null, criamos um novo.
             SalvarCommand = new RelayCommand(SalvarCliente);
             CancelarCommand = new RelayCommand(Cancelar);
@@ -50,7 +51,7 @@ namespace WpfVendas.ViewModels
                     AtualizarClienteAsync(Cliente);
                 }
 
-                //_fecharAction();
+                _fecharAction();
             }
         }
 
@@ -63,13 +64,13 @@ namespace WpfVendas.ViewModels
         {
             try
             {
-                var apiUrl = $"http://localhost:3000/Api/UpdateCliente/{cliente.Id}";
+                var apiUrl = $"http://localhost:5299/Api/UpdateCliente/{cliente.Id}";             
                 var response = await _httpClient.PutAsJsonAsync(apiUrl, cliente);
 
-                if (response.IsSuccessStatusCode)
+                if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
                 {
                     MessageBox.Show($"Cliente {cliente.Nome} atualizado com sucesso!", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
-                         }
+                }
                 else
                 {
                     MessageBox.Show($"Erro ao salvar o cliente: {response.StatusCode}", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -77,7 +78,6 @@ namespace WpfVendas.ViewModels
             }
             catch (Exception ex)
             {
-                // Captura exceções e mostra a mensagem de erro
                 Console.WriteLine($"Erro ao atualizar o cliente: {ex.Message}");
             }
         }

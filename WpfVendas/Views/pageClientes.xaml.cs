@@ -48,17 +48,18 @@ namespace WpfVendas.Pages
             // Verifica se algum cliente está selecionado
             if (ClientesDataGrid.SelectedItem is Cliente clienteSelecionado)
             {
-                // Cria o ViewModel para a janela de edição, passando o cliente selecionado
-                var viewModel = new ClienteCadastroViewModel(null, clienteSelecionado);
-
                 // Cria a janela de edição
                 var janelaCadastro = new cadCliente
                 {
-                    DataContext = viewModel,
                     Owner = Window.GetWindow(this)  // Define o dono como a janela principal (MainWindow)
                 };
 
-                janelaCadastro.ShowDialog();  // Mostra a janela de edição modal (abre por cima da MainWindow)
+                // Cria o ViewModel para a janela de edição, passando o cliente selecionado e a ação de fechar a janela
+                var viewModel = new ClienteCadastroViewModel(janelaCadastro.Close, clienteSelecionado);
+                // Define o DataContext da janela
+                janelaCadastro.DataContext = viewModel;
+                // Mostra a janela de edição modal (abre por cima da MainWindow)
+                janelaCadastro.ShowDialog();
             }
         }
     }

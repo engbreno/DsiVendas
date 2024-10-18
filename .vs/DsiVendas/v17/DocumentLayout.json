@@ -3,20 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\BrenoHPX\\Documents\\Github\\DsiVendas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F9108436-E0A4-4B3F-8D8D-1C4192B5FF01}|DsiVendas\\MvcVendas.csproj|c:\\users\\brenohpx\\documents\\github\\dsivendas\\dsivendas\\controllers\\apicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F9108436-E0A4-4B3F-8D8D-1C4192B5FF01}|DsiVendas\\MvcVendas.csproj|solutionrelative:dsivendas\\controllers\\apicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{54D8DE10-5457-4CCD-91B8-3693494AA872}|WpfVendas\\WpfVendas.csproj|c:\\users\\brenohpx\\documents\\github\\dsivendas\\wpfvendas\\viewmodels\\clientecadastroviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54D8DE10-5457-4CCD-91B8-3693494AA872}|WpfVendas\\WpfVendas.csproj|solutionrelative:wpfvendas\\viewmodels\\clientecadastroviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54D8DE10-5457-4CCD-91B8-3693494AA872}|WpfVendas\\WpfVendas.csproj|c:\\users\\brenohpx\\documents\\github\\dsivendas\\wpfvendas\\views\\pageclientes.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54D8DE10-5457-4CCD-91B8-3693494AA872}|WpfVendas\\WpfVendas.csproj|solutionrelative:wpfvendas\\views\\pageclientes.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54D8DE10-5457-4CCD-91B8-3693494AA872}|WpfVendas\\WpfVendas.csproj|c:\\users\\brenohpx\\documents\\github\\dsivendas\\wpfvendas\\views\\cadcliente.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54D8DE10-5457-4CCD-91B8-3693494AA872}|WpfVendas\\WpfVendas.csproj|solutionrelative:wpfvendas\\views\\cadcliente.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54D8DE10-5457-4CCD-91B8-3693494AA872}|WpfVendas\\WpfVendas.csproj|c:\\users\\brenohpx\\documents\\github\\dsivendas\\wpfvendas\\viewmodels\\reladcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54D8DE10-5457-4CCD-91B8-3693494AA872}|WpfVendas\\WpfVendas.csproj|solutionrelative:wpfvendas\\viewmodels\\reladcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54D8DE10-5457-4CCD-91B8-3693494AA872}|WpfVendas\\WpfVendas.csproj|c:\\users\\brenohpx\\documents\\github\\dsivendas\\wpfvendas\\views\\cadcliente.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{54D8DE10-5457-4CCD-91B8-3693494AA872}|WpfVendas\\WpfVendas.csproj|solutionrelative:wpfvendas\\views\\cadcliente.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{54D8DE10-5457-4CCD-91B8-3693494AA872}|WpfVendas\\WpfVendas.csproj|c:\\users\\brenohpx\\documents\\github\\dsivendas\\wpfvendas\\viewmodels\\clienteviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{54D8DE10-5457-4CCD-91B8-3693494AA872}|WpfVendas\\WpfVendas.csproj|solutionrelative:wpfvendas\\viewmodels\\clienteviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F9108436-E0A4-4B3F-8D8D-1C4192B5FF01}|DsiVendas\\MvcVendas.csproj|c:\\users\\brenohpx\\documents\\github\\dsivendas\\dsivendas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F9108436-E0A4-4B3F-8D8D-1C4192B5FF01}|DsiVendas\\MvcVendas.csproj|solutionrelative:dsivendas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F9108436-E0A4-4B3F-8D8D-1C4192B5FF01}|DsiVendas\\MvcVendas.csproj|c:\\users\\brenohpx\\documents\\github\\dsivendas\\dsivendas\\controllers\\apicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9108436-E0A4-4B3F-8D8D-1C4192B5FF01}|DsiVendas\\MvcVendas.csproj|solutionrelative:dsivendas\\controllers\\apicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{54D8DE10-5457-4CCD-91B8-3693494AA872}|WpfVendas\\WpfVendas.csproj|c:\\users\\brenohpx\\documents\\github\\dsivendas\\wpfvendas\\views\\pageclientes.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54D8DE10-5457-4CCD-91B8-3693494AA872}|WpfVendas\\WpfVendas.csproj|solutionrelative:wpfvendas\\views\\pageclientes.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F9108436-E0A4-4B3F-8D8D-1C4192B5FF01}|DsiVendas\\MvcVendas.csproj|c:\\users\\brenohpx\\documents\\github\\dsivendas\\dsivendas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9108436-E0A4-4B3F-8D8D-1C4192B5FF01}|DsiVendas\\MvcVendas.csproj|solutionrelative:dsivendas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{54D8DE10-5457-4CCD-91B8-3693494AA872}|WpfVendas\\WpfVendas.csproj|c:\\users\\brenohpx\\documents\\github\\dsivendas\\wpfvendas\\views\\pageclientes.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -38,7 +54,58 @@
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ReladCommand.cs",
+              "DocumentMoniker": "C:\\Users\\BrenoHPX\\Documents\\Github\\DsiVendas\\WpfVendas\\ViewModels\\ReladCommand.cs",
+              "RelativeDocumentMoniker": "WpfVendas\\ViewModels\\ReladCommand.cs",
+              "ToolTip": "C:\\Users\\BrenoHPX\\Documents\\Github\\DsiVendas\\WpfVendas\\ViewModels\\ReladCommand.cs",
+              "RelativeToolTip": "WpfVendas\\ViewModels\\ReladCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T17:22:24.817Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "cadCliente.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\BrenoHPX\\Documents\\Github\\DsiVendas\\WpfVendas\\Views\\cadCliente.xaml.cs",
+              "RelativeDocumentMoniker": "WpfVendas\\Views\\cadCliente.xaml.cs",
+              "ToolTip": "C:\\Users\\BrenoHPX\\Documents\\Github\\DsiVendas\\WpfVendas\\Views\\cadCliente.xaml.cs",
+              "RelativeToolTip": "WpfVendas\\Views\\cadCliente.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T17:21:15.591Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ClienteCadastroViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\BrenoHPX\\Documents\\Github\\DsiVendas\\WpfVendas\\ViewModels\\ClienteCadastroViewModel.cs",
+              "RelativeDocumentMoniker": "WpfVendas\\ViewModels\\ClienteCadastroViewModel.cs",
+              "ToolTip": "C:\\Users\\BrenoHPX\\Documents\\Github\\DsiVendas\\WpfVendas\\ViewModels\\ClienteCadastroViewModel.cs",
+              "RelativeToolTip": "WpfVendas\\ViewModels\\ClienteCadastroViewModel.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAADQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T17:21:53.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "cadCliente.xaml",
+              "DocumentMoniker": "C:\\Users\\BrenoHPX\\Documents\\Github\\DsiVendas\\WpfVendas\\Views\\cadCliente.xaml",
+              "RelativeDocumentMoniker": "WpfVendas\\Views\\cadCliente.xaml",
+              "ToolTip": "C:\\Users\\BrenoHPX\\Documents\\Github\\DsiVendas\\WpfVendas\\Views\\cadCliente.xaml",
+              "RelativeToolTip": "WpfVendas\\Views\\cadCliente.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-18T17:20:39.552Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\BrenoHPX\\Documents\\Github\\DsiVendas\\DsiVendas\\Program.cs",
               "RelativeDocumentMoniker": "DsiVendas\\Program.cs",
@@ -46,12 +113,11 @@
               "RelativeToolTip": "DsiVendas\\Program.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T19:11:14.874Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-17T19:11:14.874Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "ClienteViewModel.cs",
               "DocumentMoniker": "C:\\Users\\BrenoHPX\\Documents\\Github\\DsiVendas\\WpfVendas\\ViewModels\\ClienteViewModel.cs",
               "RelativeDocumentMoniker": "WpfVendas\\ViewModels\\ClienteViewModel.cs",
@@ -64,7 +130,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "ApiController.cs",
               "DocumentMoniker": "C:\\Users\\BrenoHPX\\Documents\\Github\\DsiVendas\\DsiVendas\\Controllers\\ApiController.cs",
               "RelativeDocumentMoniker": "DsiVendas\\Controllers\\ApiController.cs",
@@ -77,33 +143,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "WpfVendas",
+              "DocumentIndex": 9,
+              "Title": "WpfVendas.csproj",
               "DocumentMoniker": "C:\\Users\\BrenoHPX\\Documents\\Github\\DsiVendas\\WpfVendas\\WpfVendas.csproj",
               "RelativeDocumentMoniker": "WpfVendas\\WpfVendas.csproj",
               "ToolTip": "C:\\Users\\BrenoHPX\\Documents\\Github\\DsiVendas\\WpfVendas\\WpfVendas.csproj",
               "RelativeToolTip": "WpfVendas\\WpfVendas.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-17T18:42:17.96Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-17T18:42:17.96Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "pageClientes.xaml.cs",
               "DocumentMoniker": "C:\\Users\\BrenoHPX\\Documents\\Github\\DsiVendas\\WpfVendas\\Views\\pageClientes.xaml.cs",
               "RelativeDocumentMoniker": "WpfVendas\\Views\\pageClientes.xaml.cs",
               "ToolTip": "C:\\Users\\BrenoHPX\\Documents\\Github\\DsiVendas\\WpfVendas\\Views\\pageClientes.xaml.cs",
               "RelativeToolTip": "WpfVendas\\Views\\pageClientes.xaml.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAQwDcAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAC4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-17T17:23:20.359Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "pageClientes.xaml",
               "DocumentMoniker": "C:\\Users\\BrenoHPX\\Documents\\Github\\DsiVendas\\WpfVendas\\Views\\pageClientes.xaml",
               "RelativeDocumentMoniker": "WpfVendas\\Views\\pageClientes.xaml",
